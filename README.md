@@ -1,4 +1,4 @@
-# Projekt: Schemat Huffmana
+# Projekt: Schemat Huffmana 🇵🇱
 
 ## Opis projektu:
 Celem programu jest zbudowanie schematu Huffmana dla danego łańcucha znaków oraz wypisanie dla komunikatu kodu jednoznacznego.
@@ -21,7 +21,7 @@ Celem programu jest zbudowanie schematu Huffmana dla danego łańcucha znaków o
 ## Opis funkcji:
 Funkcja sprawdza, czy lista `charCounts` zawiera co najmniej 2 elementy. Jeśli nie, zwracana jest oryginalna lista `charCounts`. Jeśli lista `charCounts` ma co najmniej 2 elementy, sortowana jest ona według wartości drugiego elementu (czyli częstości wystąpień). Do zmiennych `min1` i `min2` przypisywane są pierwsze dwie pary znaków z posortowanej listy. Tworzona jest nowa zmienna `newElem`, zawierająca jedną parę znaków, której pierwszy element to połączenie znaków z `min1` i `min2`, a drugi element to suma częstości wystąpień z `min1` i `min2`. Do zmiennej `restElem` przypisywana jest lista `charCounts`, z której usunięte są pary `min1` i `min2`. Wynikiem funkcji jest lista, która zawiera `newElem` na początku, a następnie `restElem` (pozostałe pary znaków).
 
-# Project: Huffman Scheme
+# Project: Huffman Scheme 🇬🇧
 
 ## Project Description:
 The aim of the program is to build a Huffman scheme for a given string of characters and print out a unambiguous code for the message.
