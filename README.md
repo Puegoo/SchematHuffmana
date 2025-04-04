@@ -1,31 +1,33 @@
 # Projekt: Schemat Huffmana 🇵🇱 / Huffman Scheme 🇺🇸
 
-<table width="100%">
+<table style="width:100%">
   <tr>
-    <td align="center" width="50%" valign="top">
+    <td style="width:50%; text-align:left; vertical-align:top;">
 
-### 🇵🇱 Spis treści (PL)
+<b>🇵🇱 Spis treści (PL)</b>  
+<br>
 
-1. [Opis projektu](#opis-projektu)  
-2. [Funkcjonalności](#funkcjonalności)  
-3. [Zawartość repozytorium](#zawartość-repozytorium)  
-4. [Struktura kodu](#struktura-kodu)  
-5. [Instrukcje uruchomienia](#instrukcje-uruchomienia)  
-6. [Testy jednostkowe](#testy-jednostkowe)  
-7. [Możliwe rozszerzenia](#możliwe-rozszerzenia)  
+1. <a href="#opis-projektu">Opis projektu</a>  
+2. <a href="#funkcjonalności">Funkcjonalności</a>  
+3. <a href="#zawartość-repozytorium">Zawartość repozytorium</a>  
+4. <a href="#struktura-kodu">Struktura kodu</a>  
+5. <a href="#instrukcje-uruchomienia">Instrukcje uruchomienia</a>  
+6. <a href="#testy-jednostkowe">Testy jednostkowe</a>  
+7. <a href="#możliwe-rozszerzenia">Możliwe rozszerzenia</a>  
 
 </td>
-<td align="center" width="50%" valign="top">
+<td style="width:50%; text-align:left; vertical-align:top;">
 
-### 🇺🇸 Table of Contents (EN)
+<b>🇺🇸 Table of Contents (EN)</b>  
+<br>
 
-1. [Project Description](#project-description)  
-2. [Features](#features)  
-3. [Repository Contents](#repository-contents)  
-4. [Code Structure](#code-structure)  
-5. [Usage Instructions](#usage-instructions)  
-6. [Unit Tests](#unit-tests)  
-7. [Possible Extensions](#possible-extensions)  
+1. <a href="#project-description">Project Description</a>  
+2. <a href="#features">Features</a>  
+3. <a href="#repository-contents">Repository Contents</a>  
+4. <a href="#code-structure">Code Structure</a>  
+5. <a href="#usage-instructions">Usage Instructions</a>  
+6. <a href="#unit-tests">Unit Tests</a>  
+7. <a href="#possible-extensions">Possible Extensions</a>  
 
 </td>
   </tr>
