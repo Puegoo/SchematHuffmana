@@ -1,10 +1,10 @@
 # Projekt: Schemat Huffmana 🇵🇱 / Huffman Scheme 🇺🇸
 
-<table>
+<table width="100%">
   <tr>
-    <td valign="top">
+    <td width="50%" valign="top">
 
-### Spis treści (PL)
+### 🇵🇱 Spis treści (PL)
 
 1. [Opis projektu](#opis-projektu)  
 2. [Funkcjonalności](#funkcjonalności)  
@@ -15,9 +15,9 @@
 7. [Możliwe rozszerzenia](#możliwe-rozszerzenia)  
 
 </td>
-<td valign="top">
+<td width="50%" valign="top">
 
-### Table of Contents (EN)
+### 🇺🇸 Table of Contents (EN)
 
 1. [Project Description](#project-description)  
 2. [Features](#features)  
