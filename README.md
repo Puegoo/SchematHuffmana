@@ -2,7 +2,7 @@
 
 <table width="100%">
   <tr>
-    <td width="50%" valign="top">
+    <td align="center" width="50%" valign="top">
 
 ### 🇵🇱 Spis treści (PL)
 
@@ -15,7 +15,7 @@
 7. [Możliwe rozszerzenia](#możliwe-rozszerzenia)  
 
 </td>
-<td width="50%" valign="top">
+<td align="center" width="50%" valign="top">
 
 ### 🇺🇸 Table of Contents (EN)
 
