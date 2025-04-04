@@ -1,27 +1,37 @@
 # Projekt: Schemat Huffmana 🇵🇱 / Huffman Scheme 🇺🇸
 
-<div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start; flex-wrap: nowrap;">
-  <div style="width: 48%; text-align: left; padding-right: 10px;">
-    <b>🇵🇱 Spis treści (PL)</b><br><br>
-    1. <a href="#opis-projektu">Opis projektu</a><br>
-    2. <a href="#funkcjonalności">Funkcjonalności</a><br>
-    3. <a href="#zawartość-repozytorium">Zawartość repozytorium</a><br>
-    4. <a href="#struktura-kodu">Struktura kodu</a><br>
-    5. <a href="#instrukcje-uruchomienia">Instrukcje uruchomienia</a><br>
-    6. <a href="#testy-jednostkowe">Testy jednostkowe</a><br>
-    7. <a href="#możliwe-rozszerzenia">Możliwe rozszerzenia</a>
-  </div>
-  <div style="width: 48%; text-align: left; padding-left: 10px; margin-left: auto;">
-    <b>🇺🇸 Table of Contents (EN)</b><br><br>
-    1. <a href="#project-description">Project Description</a><br>
-    2. <a href="#features">Features</a><br>
-    3. <a href="#repository-contents">Repository Contents</a><br>
-    4. <a href="#code-structure">Code Structure</a><br>
-    5. <a href="#usage-instructions">Usage Instructions</a><br>
-    6. <a href="#unit-tests">Unit Tests</a><br>
-    7. <a href="#possible-extensions">Possible Extensions</a>
-  </div>
-</div>
+<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="width:50%; text-align:left; vertical-align:top;">
+
+<b>🇵🇱 Spis treści (PL)</b>  
+<br>
+
+1. <a href="#opis-projektu">Opis projektu</a>  
+2. <a href="#funkcjonalności">Funkcjonalności</a>  
+3. <a href="#zawartość-repozytorium">Zawartość repozytorium</a>  
+4. <a href="#struktura-kodu">Struktura kodu</a>  
+5. <a href="#instrukcje-uruchomienia">Instrukcje uruchomienia</a>  
+6. <a href="#testy-jednostkowe">Testy jednostkowe</a>  
+7. <a href="#możliwe-rozszerzenia">Możliwe rozszerzenia</a>  
+
+</td>
+<td style="width:50%; text-align:left; vertical-align:top;">
+
+<b>🇺🇸 Table of Contents (EN)</b>  
+<br>
+
+1. <a href="#project-description">Project Description</a>  
+2. <a href="#features">Features</a>  
+3. <a href="#repository-contents">Repository Contents</a>  
+4. <a href="#code-structure">Code Structure</a>  
+5. <a href="#usage-instructions">Usage Instructions</a>  
+6. <a href="#unit-tests">Unit Tests</a>  
+7. <a href="#possible-extensions">Possible Extensions</a>  
+
+</td>
+  </tr>
+</table>
 
 <br>
 
