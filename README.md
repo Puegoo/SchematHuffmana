@@ -1,7 +1,7 @@
 # Projekt: Schemat Huffmana 🇵🇱 / Huffman Scheme 🇺🇸
 
-<div align="right" style="display: flex; justify-content: space-between; width: 100%;">
-  <div style="width: 50%; text-align: left; padding-right: 10px;">
+<div style="display: flex; justify-content: space-between; width: 100%;">
+  <div align="right" style="width: 50%; text-align: left; padding-right: 10px;">
     <b>🇵🇱 Spis treści (PL)</b><br><br>
     1. <a href="#opis-projektu">Opis projektu</a><br>
     2. <a href="#funkcjonalności">Funkcjonalności</a><br>
