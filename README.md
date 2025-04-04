@@ -1,6 +1,6 @@
 # Projekt: Schemat Huffmana 🇵🇱 / Huffman Scheme 🇺🇸
 
-<table align="center" style="width:100%;">
+<table align="center" style="width:100%; border=0">
   <tr>
     <td style="width:50%; text-align:left; vertical-align:top;">
 
