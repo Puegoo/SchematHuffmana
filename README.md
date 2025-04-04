@@ -1,46 +1,282 @@
-# Projekt: Schemat Huffmana 🇵🇱
+# Projekt: Schemat Huffmana 🇵🇱 / Huffman Scheme 🇺🇸
 
-## Opis projektu:
-Celem programu jest zbudowanie schematu Huffmana dla danego łańcucha znaków oraz wypisanie dla komunikatu kodu jednoznacznego.
+<table>
+  <tr>
+    <td valign="top">
 
-## Opis zmiennych:
-- `tabAll`: Lista przechowująca wszystkie etapy drzewa Huffmana. Każdy etap to lista par znaków i ich częstości wystąpień.
-- `charCounts`: Lista par znaków i odpowiadających im częstości wystąpień w łańcuchu znaków.
-- `lenWord`: Długość łańcucha znaków.
-- `lenTab`: Aktualna liczba par znaków w liście `charCounts`.
-- `{min1, min2}`: Pary znaków o najmniejszych częstościach wystąpień w liście `charCounts`.
-- `newElem`: Lista zawierająca parę znaków utworzoną przez połączenie `min1` i `min2` oraz sumę ich częstości wystąpień.
-- `restElem`: Lista zawierająca wszystkie pozostałe pary znaków z `charCounts` poza `min1` i `min2`.
-- `suma`: Zmienna pomocnicza przechowująca sumę częstości wystąpień znaków.
-- `end`: Zmienna pomocnicza używana do kontrolowania indeksów w pętli `for`.
-- `tabTree`: Lista przechowująca pary znaków i ich położenie w drzewie Huffmana.
-- `tabLett`: Lista przechowująca pary (znak, bit) dla każdego węzła w strukturze Huffmana.
-- `tabBin`: Lista przechowująca pary (znak, bit) w postaci listy, przygotowanej do utworzenia drzewa Huffmana.
-- `result`: Lista przechowująca pary (znak, kod) dla każdego znaku w strukturze Huffmana.
+### Spis treści (PL)
 
-## Opis funkcji:
-Funkcja sprawdza, czy lista `charCounts` zawiera co najmniej 2 elementy. Jeśli nie, zwracana jest oryginalna lista `charCounts`. Jeśli lista `charCounts` ma co najmniej 2 elementy, sortowana jest ona według wartości drugiego elementu (czyli częstości wystąpień). Do zmiennych `min1` i `min2` przypisywane są pierwsze dwie pary znaków z posortowanej listy. Tworzona jest nowa zmienna `newElem`, zawierająca jedną parę znaków, której pierwszy element to połączenie znaków z `min1` i `min2`, a drugi element to suma częstości wystąpień z `min1` i `min2`. Do zmiennej `restElem` przypisywana jest lista `charCounts`, z której usunięte są pary `min1` i `min2`. Wynikiem funkcji jest lista, która zawiera `newElem` na początku, a następnie `restElem` (pozostałe pary znaków).
+1. [Opis projektu](#opis-projektu)  
+2. [Funkcjonalności](#funkcjonalności)  
+3. [Zawartość repozytorium](#zawartość-repozytorium)  
+4. [Struktura kodu](#struktura-kodu)  
+5. [Instrukcje uruchomienia](#instrukcje-uruchomienia)  
+6. [Testy jednostkowe](#testy-jednostkowe)  
+7. [Możliwe rozszerzenia](#możliwe-rozszerzenia)  
 
-##
-# Project: Huffman Scheme 🇬🇧
+</td>
+<td valign="top">
 
-## Project Description:
-The aim of the program is to build a Huffman scheme for a given string of characters and print out a unambiguous code for the message.
+### Table of Contents (EN)
 
-## Variable Description:
-- `tabAll`: List storing all stages of the Huffman tree. Each stage is a list of character pairs and their occurrence frequencies.
-- `charCounts`: List of character pairs and their corresponding occurrence frequencies in the string of characters.
-- `lenWord`: Length of the string of characters.
-- `lenTab`: Current number of character pairs in the `charCounts` list.
-- `{min1, min2}`: Character pairs with the smallest occurrence frequencies in the `charCounts` list.
-- `newElem`: List containing a character pair created by combining `min1` and `min2` and the sum of their occurrence frequencies.
-- `restElem`: List containing all remaining character pairs from `charCounts` except `min1` and `min2`.
-- `suma`: Auxiliary variable storing the sum of character occurrence frequencies.
-- `end`: Auxiliary variable used to control indices in the `for` loop.
-- `tabTree`: List storing character pairs and their position in the Huffman tree.
-- `tabLett`: List storing pairs (character, bit) for each node in the Huffman structure.
-- `tabBin`: List storing pairs (character, bit) in the form of a list, prepared for creating a Huffman tree.
-- `result`: List storing pairs (character, code) for each character in the Huffman structure.
+1. [Project Description](#project-description)  
+2. [Features](#features)  
+3. [Repository Contents](#repository-contents)  
+4. [Code Structure](#code-structure)  
+5. [Usage Instructions](#usage-instructions)  
+6. [Unit Tests](#unit-tests)  
+7. [Possible Extensions](#possible-extensions)  
 
-## Function Description:
-The function checks if the `charCounts` list contains at least 2 elements. If not, the original `charCounts` list is returned. If the `charCounts` list has at least 2 elements, it is sorted by the value of the second element (i.e., occurrence frequencies). The first two character pairs from the sorted list are assigned to the variables `min1` and `min2`. A new variable `newElem` is created, containing a single character pair whose first element is the combination of characters from `min1` and `min2`, and the second element is the sum of their occurrence frequencies. The variable `restElem` is assigned the `charCounts` list from which `min1` and `min2` pairs are removed. The function returns a list containing `newElem` at the beginning, followed by `restElem` (the remaining character pairs).
+</td>
+  </tr>
+</table>
+
+---
+
+# 🇵🇱 Wersja polska
+
+## Opis projektu
+Celem projektu jest zbudowanie schematu Huffmana dla danego łańcucha znaków oraz wygenerowanie jednoznacznego kodu, który może być użyty do kodowania i dekodowania wiadomości. Projekt został zaimplementowany w języku Wolfram Language (Mathematica).
+
+## Funkcjonalności
+- **Budowanie drzewa Huffmana**
+- **Generowanie kodów Huffmana**
+- **Kodowanie i dekodowanie**
+- **Interaktywna wizualizacja**
+- **Walidacja wejścia**
+- **Testy jednostkowe**
+
+## Zawartość repozytorium
+- `SchematHuffmana.nb`
+- `README.md`
+
+## Struktura kodu
+
+### 1. Przetwarzanie tekstu wejściowego
+```mathematica
+processInput[text_String] := Module[{lowerText, charList, freqList},
+  lowerText = ToLowerCase[StringReplace[text, " " -> "_"]];
+  charList = Characters[lowerText];
+  freqList = Tally[charList];
+  SortBy[freqList, Last]
+]
+```
+
+### 2. Budowanie drzewa Huffmana
+```mathematica
+buildHuffmanTree[charCounts_List] := Module[{sorted, min1, min2, newElem, rest},
+  If[Length[charCounts] < 2, Return[First[charCounts]]];
+  sorted = SortBy[charCounts, Last];
+  {min1, min2} = Take[sorted, 2];
+  newElem = {StringJoin[min1[[1]], min2[[1]]], min1[[2]] + min2[[2]]};
+  rest = DeleteCases[sorted, min1 | min2];
+  buildHuffmanTree[Prepend[rest, newElem]]
+]
+```
+
+### 3. Generowanie kodów Huffmana
+```mathematica
+generateHuffmanCodes[tree_, code_: ""] := Module[{left, right},
+  If[AtomQ[tree],
+    Return[{tree -> code}],
+    {left, right} = tree;
+    Join[
+      generateHuffmanCodes[left, code <> "0"],
+      generateHuffmanCodes[right, code <> "1"]
+    ]
+  ]
+]
+```
+
+### 4. Kodowanie i dekodowanie wiadomości
+```mathematica
+encodeMessage[message_String, codes_List] := Module[{charList, encoded},
+  charList = Characters[ToLowerCase[StringReplace[message, " " -> "_"]]];
+  encoded = StringJoin[charList /. codes];
+  encoded
+]
+
+decodeMessage[encoded_String, codes_List] := Module[{reverseCodes, decoded, temp},
+  reverseCodes = Association[Reverse /@ Normal[codes]];
+  decoded = "";
+  temp = "";
+  Do[
+    temp = temp <> char;
+    If[KeyExistsQ[reverseCodes, temp],
+      decoded = decoded <> reverseCodes[temp];
+      temp = ""
+    ],
+    {char, Characters[encoded]}
+  ];
+  decoded
+]
+```
+
+### 5. Interaktywna wizualizacja drzewa Huffmana
+```mathematica
+visualizeHuffmanTree[tree_] := Module[{graph},
+  graph = LayeredGraphPlot[tree, VertexLabels -> Automatic, DirectedEdges -> True];
+  Print[Framed[graph]];
+]
+```
+
+### 6. Przykładowe użycie całego systemu
+```mathematica
+inputString = InputString["Wprowadź ciąg znaków: "];
+If[StringLength[inputString] < 2,
+  Print["Wprowadziłeś zbyt małą liczbę znaków, aby stworzyć schemat Huffmana!"];
+  Abort[]
+];
+processed = processInput[inputString];
+tree = buildHuffmanTree[processed];
+codes = generateHuffmanCodes[tree];
+Print["Kody Huffmana:"];
+Print[codes];
+encodedMessage = encodeMessage[inputString, codes];
+Print["Zakodowana wiadomość: ", encodedMessage];
+decodedMessage = decodeMessage[encodedMessage, codes];
+Print["Odkodowana wiadomość: ", decodedMessage];
+visualizeHuffmanTree[tree];
+```
+
+## Instrukcje uruchomienia
+1. Upewnij się, że masz zainstalowaną wersję Mathematica 13.2 (lub nowszą).
+2. Otwórz plik `SchematHuffmana.nb` w środowisku Wolfram Notebook.
+3. Uruchom notebook (Shift+Enter) i postępuj zgodnie z instrukcjami.
+
+## Testy jednostkowe
+```mathematica
+Assert[encodeMessage["aba", codes] === StringJoin[{"0", "1", "0"}]];
+Assert[decodeMessage[StringJoin[{"0", "1", "0"}], codes] === "aba"];
+```
+
+## Możliwe rozszerzenia
+- Interfejs graficzny z `Manipulate`
+- Obsługa plików tekstowych, obrazów, dźwięków
+- Walidacja zaawansowana
+- Testy automatyczne i integracyjne
+
+<br><br>
+
+# 🇺🇸 English Version
+
+## Project Description
+The goal of the project is to build a Huffman scheme for a given character string and generate a unique code that can be used to encode and decode messages. The project is implemented in Wolfram Language (Mathematica).
+
+## Features
+- **Building the Huffman tree**
+- **Generating Huffman codes**
+- **Encoding and decoding**
+- **Interactive visualization**
+- **Input validation**
+- **Unit testing**
+
+## Repository Contents
+- `SchematHuffmana.nb`
+- `README.md`
+
+## Code Structure
+
+### 1. Input text processing
+```mathematica
+processInput[text_String] := Module[{lowerText, charList, freqList},
+  lowerText = ToLowerCase[StringReplace[text, " " -> "_"]];
+  charList = Characters[lowerText];
+  freqList = Tally[charList];
+  SortBy[freqList, Last]
+]
+```
+
+### 2. Building the Huffman tree
+```mathematica
+buildHuffmanTree[charCounts_List] := Module[{sorted, min1, min2, newElem, rest},
+  If[Length[charCounts] < 2, Return[First[charCounts]]];
+  sorted = SortBy[charCounts, Last];
+  {min1, min2} = Take[sorted, 2];
+  newElem = {StringJoin[min1[[1]], min2[[1]]], min1[[2]] + min2[[2]]};
+  rest = DeleteCases[sorted, min1 | min2];
+  buildHuffmanTree[Prepend[rest, newElem]]
+]
+```
+
+### 3. Generating Huffman codes
+```mathematica
+generateHuffmanCodes[tree_, code_: ""] := Module[{left, right},
+  If[AtomQ[tree],
+    Return[{tree -> code}],
+    {left, right} = tree;
+    Join[
+      generateHuffmanCodes[left, code <> "0"],
+      generateHuffmanCodes[right, code <> "1"]
+    ]
+  ]
+]
+```
+
+### 4. Message encoding and decoding
+```mathematica
+encodeMessage[message_String, codes_List] := Module[{charList, encoded},
+  charList = Characters[ToLowerCase[StringReplace[message, " " -> "_"]]];
+  encoded = StringJoin[charList /. codes];
+  encoded
+]
+
+decodeMessage[encoded_String, codes_List] := Module[{reverseCodes, decoded, temp},
+  reverseCodes = Association[Reverse /@ Normal[codes]];
+  decoded = "";
+  temp = "";
+  Do[
+    temp = temp <> char;
+    If[KeyExistsQ[reverseCodes, temp],
+      decoded = decoded <> reverseCodes[temp];
+      temp = ""
+    ],
+    {char, Characters[encoded]}
+  ];
+  decoded
+]
+```
+
+### 5. Interactive Huffman tree visualization
+```mathematica
+visualizeHuffmanTree[tree_] := Module[{graph},
+  graph = LayeredGraphPlot[tree, VertexLabels -> Automatic, DirectedEdges -> True];
+  Print[Framed[graph]];
+]
+```
+
+### 6. Full system usage example
+```mathematica
+inputString = InputString["Enter a string of characters: "];
+If[StringLength[inputString] < 2,
+  Print["You entered too few characters to build a Huffman scheme!"];
+  Abort[]
+];
+processed = processInput[inputString];
+tree = buildHuffmanTree[processed];
+codes = generateHuffmanCodes[tree];
+Print["Huffman codes:"];
+Print[codes];
+encodedMessage = encodeMessage[inputString, codes];
+Print["Encoded message: ", encodedMessage];
+decodedMessage = decodeMessage[encodedMessage, codes];
+Print["Decoded message: ", decodedMessage];
+visualizeHuffmanTree[tree];
+```
+
+## Usage Instructions
+1. Make sure you have Mathematica 13.2 or later installed.
+2. Open the file `SchematHuffmana.nb` in Wolfram Notebook.
+3. Run the notebook (Shift+Enter) and follow the prompts.
+
+## Unit Tests
+```mathematica
+Assert[encodeMessage["aba", codes] === StringJoin[{"0", "1", "0"}]];
+Assert[decodeMessage[StringJoin[{"0", "1", "0"}], codes] === "aba"];
+```
+
+## Possible Extensions
+- Graphical interface using `Manipulate`
+- Support for text files, images, audio
+- Advanced input validation
+- Automated and integration testing
